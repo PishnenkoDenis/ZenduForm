@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .previous, .next, .page {
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid #B8B9BC;
+        border-radius: 4px;
+        background: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+          background: #ECECED;
+        }
+    }
+}
