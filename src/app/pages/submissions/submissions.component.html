@@ -5,7 +5,9 @@
           <input type="search" placeholder="Search...">
           <select name="" id="" placeholder="Select Form"></select>
           <select name="" id=""></select>
-          <input type="date">
+           <div class="input-container">
+            <input type="date" id="date" placeholder="DD/MM/YYYY">
+           </div>
         </div>
         <div class="btn-wrapper">
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
@@ -17,8 +19,7 @@
             </div>
             <div class="export-container">
                 <div class="export-icon-wrapper">
-                    <img src="../../../assets/export.svg" alt="">
-                    <img src="../../../assets/exportpart.svg" alt="">
+                    <img src="../../../assets/Paper Download.svg" alt="">
                 </div>
                 <span class="export-title">Export</span>
             </div>
@@ -28,14 +29,55 @@
         <div class="task-list-header">
            <input type="checkbox" name="" id="">
            <div class="title-group">
-            <span class="title">Task</span>
-            <span class="title">Status</span>
-            <span class="title">Form</span>
-            <span class="title">To</span>
-            <span class="title">Customer Address</span>
-            <span class="title">Due Date</span>
+            <span class="title task">Task</span>
+            <span class="title status">Status</span>
+            <span class="title from">From</span>
+            <span class="title to">To</span>
+            <span class="title address">Customer Address</span>
+            <span class="title date">Due Date</span>
            </div>
         </div>
+        <ul class="list-group">
+            <li class="list-item" *ngFor="let submission of submissions" #listItem>
+                <input type="checkbox" name="" id="">
+                <div class="inform-group">
+                   <div class="start">
+                    <span class="item-text">{{submission.task}}</span>
+                    <div class="low-risk" *ngIf="submission.status === 'Low Risk'">
+                      <div class="green"></div>
+                      <span class="title-green">{{submission.status}}</span>
+                    </div>
+                    <div class="uncompleted" *ngIf="submission.status === 'Uncomplete'">
+                        <div class="red"></div>
+                        <span class="title-red">{{submission.status}}</span>
+                    </div>
+                    <div class="unassigned" *ngIf="submission.status === 'Unassigned'">
+                        <div class="grey"></div>
+                        <span class="title-grey">{{submission.status}}</span>
+                    </div>
+                   </div>
+                  <div class="middle">
+                    <div class="from">
+                        <span class="item-text">{{submission.from}}</span>
+                      </div>
+                      <div class="to">
+                        <span class="item-text">{{submission.to}}</span>
+                      </div>
+                  </div>
+                  <div class="end">
+                    <div class="address">
+                        <span class="item-text">{{submission.address}}</span>
+                      </div>
+                      <div class="date">
+                        <span class="item-text">{{submission.due_date}}</span>
+                      </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
     </div>
-    <div class="pagination"></div>
+    <div class="pagination">
+        <span class="pagination-title">1-10 of {{submissions.length}} submissions</span>
+        <app-pagination [items]="submissions" (changePage)="changePage($event)"></app-pagination>
+    </div>
 </div>
