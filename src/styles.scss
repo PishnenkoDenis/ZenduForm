@@ -4,6 +4,15 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+:root {
+   --color-green: #D7E5DA;
+   --color-red: rgba(255, 61, 0, 0.1);
+   --color-grey: #ECECED;
+   --dark-green: #53D86A;
+   --dark-red:#FF3D00;
+   --dark-grey: #B8B9BC;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
