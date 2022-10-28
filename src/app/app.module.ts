@@ -9,6 +9,8 @@ import { SubmissionsComponent } from './pages/submissions/submissions.component'
 import { HeaderComponent } from './components/header/header.component';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     NgbModule,
     BrowserModule,
     HttpClientModule,
-    JwPaginationModule
+    JwPaginationModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

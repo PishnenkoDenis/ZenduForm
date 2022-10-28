@@ -18,7 +18,6 @@
     }
 }
 
-input[type=search],
 input[type=date] {
     font-size: 12px;
     appearance: none;
@@ -35,8 +34,7 @@ input[type=date]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-input[type=date],
-input[type=search] {
+input[type=date]{
   .ng-invalid.ng-touched{ 
     border-color: red; 
  }
@@ -44,18 +42,8 @@ input[type=search] {
  &:focus {
     box-shadow: 0 0 6px 0 rgba(24, 138, 254, 0.2);
     border: solid 1.3px #6fb6ff;
-}
-}
+  }
 
-input[type=search] {
-    width: 334px;
-    position: relative;
-}
-
-input[type=search]::before:not(input[type=search]:active) {
-  position: absolute;
-  top: 13px; left: 21px;
-  content: url(../../../assets/search.svg);
 }
 
 input[type=search]::-ms-clear { 
@@ -94,14 +82,6 @@ input[type=date]::before {
   top: 13px; left: 21px;
   content: url(../../../assets/Calendar.svg);
 }
-
-// .search-container {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-around;
-//   width: 334px;
-// }
-
 
 .input-wrapper {
     max-width: 1081px;
@@ -156,7 +136,39 @@ input {
     &:disabled {
       opacity: 0.5;
     }
-}    
+} 
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 334px;
+  border: 1px solid #B8B9BC;
+  border-radius: 4px;
+
+  img {
+    margin-left: 18px;
+  }
+
+  input[type=search]::placeholder {
+    padding-left: 0.1rem;
+  }
+
+  input[type=search].search {
+    width: 286px;
+    border: none;
+    appearance: none;
+
+    &:active, &:focus {
+      outline: none !important;
+    }
+
+    &:focus {
+      border: none !important;
+      box-shadow: none;
+    }
+  }
+}
 
 select {
     max-width: 209px;
@@ -171,6 +183,7 @@ select {
     background-position: right 18px center;
     background-size: 16px;
     background-color: white;
+    padding-left: 1rem;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -186,6 +199,13 @@ select {
     &:focus {
       box-shadow: 0 0 6px 0 rgba(24, 138, 254, 0.2);
       border: solid 1.3px #6fb6ff;
+    }
+
+    option {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
     }
   
   }
@@ -230,6 +250,7 @@ select {
       font-size: 16px;
       line-height: 130%;
       color: #2188D9;
+      cursor: pointer;
     }
 }
 
@@ -294,6 +315,7 @@ select {
   height: 48px;
   display: flex;
   align-items: center;
+  border: 1px solid #ECECED;
   gap: 24px;
   cursor: pointer;
 
@@ -310,9 +332,8 @@ select {
      display: flex;
      align-items: center;
      justify-content: space-between;
-     max-width: 1393px;
+     max-width: 1343px;
      width: 100%;
-     margin-right: 3.2rem; 
 
     .middle,.end,.start {
       display: flex;
@@ -444,7 +465,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 40px;
+  margin: 12px 40px;
 
   .pagination-title {
     font-weight: 400;
@@ -452,4 +473,63 @@ select {
     line-height: 130%;
     color: #060C1B;
   }
+}
+
+.my-pagination::ng-deep .ngx-pagination li{
+  font-family: 'Roboto', sans-serif;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #B8B9BC;
+  border-radius: 4px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #060C1B
+}
+
+.my-pagination::ng-deep .ngx-pagination .current{
+  font-family: 'Roboto', sans-serif;
+  width: 2rem;
+  height: 2rem;
+  border: solid 1.3px #6fb6ff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2188D9;
+  cursor: pointer;
+}
+
+.my-pagination::ng-deep .ngx-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+
+.my-pagination::ng-deep .ngx-pagination .pagination-previous a::before,
+.my-pagination::ng-deep .ngx-pagination .pagination-previous.disabled::before {
+  content: url(../../../assets/ArrowLeft.svg) !important;
+  display: inline-block;
+  margin-right: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.my-pagination::ng-deep .ngx-pagination .pagination-previous:hover,
+.my-pagination::ng-deep .ngx-pagination .pagination-next:hover {
+  background: #ECECED;
+}
+
+.my-pagination::ng-deep .ngx-pagination .pagination-next a::after,
+.my-pagination::ng-deep .ngx-pagination .pagination-next.disabled::after{
+  content: url(../../../assets/ArrowRight.svg) !important;
+  display: inline-block;
+  margin-right: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.my-pagination::ng-deep .ngx-pagination .small-screen {
+  display: none;
 }
