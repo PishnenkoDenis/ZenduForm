@@ -26,10 +26,25 @@
         </div>
         <div class="btn-wrapper">
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <input 
+                type="radio" 
+                class="btn-check" 
+                name="btnradio" 
+                id="btnradio1" 
+                autocomplete="off" 
+                (click)="selectComponent(true)"
+                checked
+                >
                 <label class="btn" for="btnradio1">Map</label>
               
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <input 
+                type="radio" 
+                class="btn-check" 
+                name="btnradio" 
+                id="btnradio2" 
+                autocomplete="off"
+                (click)="selectComponent(false)"
+                >
                 <label class="btn" for="btnradio2">List</label>
             </div>
             <div class="export-container">
@@ -40,7 +55,8 @@
             </div>
         </div>
     </div>
-    <div class="task-list">
+    <div class="submissions-list" *ngIf="!isSelectedComponent">
+      <div class="task-list">
         <div class="task-list-header">
            <input type="checkbox" name="check" id="check" (change)="changeChecked()">
            <div class="title-group">
@@ -112,4 +128,6 @@
         (pageChange)="page = $event"
         ></pagination-controls>
     </div>
+   </div>
+   <app-map *ngIf="isSelectedComponent"></app-map>
 </div>

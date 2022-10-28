@@ -23,6 +23,8 @@ export class SubmissionsComponent implements OnInit, AfterViewInit {
 
   selectedStatus: string;
 
+  isSelectedComponent: boolean = false;
+
   @ViewChild('status', {static: true}) private statusRef: ElementRef;
 
   constructor(protected dataService: DataService) { }
@@ -33,6 +35,10 @@ export class SubmissionsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
    
+  }
+
+  selectComponent(value: boolean) {
+    this.isSelectedComponent = value;
   }
 
   changeChecked() {

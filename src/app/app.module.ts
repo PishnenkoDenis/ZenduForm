@@ -9,13 +9,15 @@ import { SubmissionsComponent } from './pages/submissions/submissions.component'
 import { HeaderComponent } from './components/header/header.component';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MapComponent } from './components/map/map.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SubmissionsComponent,
-    HeaderComponent
+    HeaderComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

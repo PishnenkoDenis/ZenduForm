@@ -254,6 +254,12 @@ select {
     }
 }
 
+.submissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .task-list {
     height: 480px;
     max-width: 1456px;

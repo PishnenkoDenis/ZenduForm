@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <div class="list">
+        <div class="list-item"
+        *ngFor="let submission of submissions | paginate: { itemsPerPage: count, currentPage: page }; let i = index"
+        >
+            <div class="item-header">
+              <span class="title">{{submission.address}}</span>
+              <div class="low-risk" *ngIf="submission.status === 'Low Risk'">
+                <div class="green"></div>
+                <span class="title-green">{{submission.status}}</span>
+              </div>
+              <div class="uncompleted" *ngIf="submission.status === 'Uncomplete'">
+                  <div class="red"></div>
+                  <span class="title-red">{{submission.status}}</span>
+              </div>
+              <div class="unassigned" *ngIf="submission.status === 'Unassigned'">
+                  <div class="grey"></div>
+                  <span class="title-grey">{{submission.status}}</span>
+              </div>
+            </div>
+          <div class="item-basement">
+            <div class="inform">
+                <span class="left-text">From:</span>
+                <span class="right-text">{{submission.from}}</span>
+            </div>
+            <div class="inform">
+                <span class="left-text">To:</span>
+                <span class="right-text">{{submission.to}}</span>
+            </div>
+            <div class="inform">
+                <span class="left-text">Due Date:</span>
+                <span class="date">{{submission.due_date}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+            <pagination-controls 
+        class="my-pagination"
+        previousLabel="" 
+        nextLabel=""
+        (pageChange)="page = $event"
+        ></pagination-controls>
+        </div>
+    </div>
+    <div class="map-wrapper">
+        <div class="map-container">
+            <div class="map-frame">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</div>
