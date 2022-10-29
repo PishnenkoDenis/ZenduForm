@@ -8,7 +8,7 @@
     .map-wrapper {
         position: relative;
         width: 997px;
-        height: 601px;
+        height: 614px;
 
        .map-container {
          position: absolute;
@@ -180,7 +180,7 @@
 .map::ng-deep .leaflet-control-container {
   
   .leaflet-bottom .leaflet-control {
-    margin-bottom: 60px;
+    margin-bottom: 67px;
   }
 
   .leaflet-right .leaflet-control {
@@ -195,6 +195,10 @@
     width: 48px;
     height: 48px;
     border-radius: 72px;
+  }
+
+  .leaflet-control-attribution {
+    display: none;
   }
 }
 
