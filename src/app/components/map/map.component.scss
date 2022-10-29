@@ -1,5 +1,4 @@
 .wrapper {
-    max-width: 1456px;
     width: 100%;
     height: 621px;
     display: flex;
@@ -176,6 +175,40 @@
         }
     }
 
+}
+
+.map::ng-deep .leaflet-control-container {
+  
+  .leaflet-bottom .leaflet-control {
+    margin-bottom: 60px;
+  }
+
+  .leaflet-right .leaflet-control {
+    margin-right: 42px;
+  }
+
+  .leaflet-top .leaflet-control {
+    margin-top: 36px;
+  }
+
+  .leaflet-control-layers-toggle {
+    width: 48px;
+    height: 48px;
+    border-radius: 72px;
+  }
+}
+
+.map::ng-deep .leaflet-control-container .leaflet-bar {
+  width: 3rem;
+  height: 6rem;
+}
+
+.map::ng-deep .leaflet-control-container .leaflet-bar a{
+  width: 43px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .my-pagination::ng-deep .ngx-pagination li{

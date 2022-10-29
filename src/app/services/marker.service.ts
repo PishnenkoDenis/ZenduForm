@@ -8,7 +8,7 @@ import * as L from 'leaflet';
 })
 export class MarkerService {
 
-  places: string = '/assets/data/marker.json';
+  places: string = '/assets/data/markers.json';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,7 +16,7 @@ export class MarkerService {
     this.httpClient.get(this.places).subscribe(
       (result: any) => {
         for(const place of result.features) {
-          
+
           const lon = place.geometry.coordinates[0];
           const lat = place.geometry.coordinates[1];
 

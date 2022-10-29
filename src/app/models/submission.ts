@@ -1,4 +1,4 @@
-export interface Submission {
+export interface ISubmission {
     task: string,
     status: string,
     from: string,

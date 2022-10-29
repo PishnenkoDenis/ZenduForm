@@ -2,9 +2,37 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 import * as L from 'leaflet';
 
-import { Submission } from 'src/app/models/submission';
+import { ISubmission } from 'src/app/models/submission';
 import { DataService } from 'src/app/services/data.service';
 import { MarkerService } from 'src/app/services/marker.service';
+
+const iconRetinaUrl = 'assets/marker-icon-2x.png';
+
+const iconUrl = 'assets/marker-icon.png';
+
+const shadowUrl = 'assets/marker-shadow.png';
+
+const iconDefault = L.icon({
+
+  iconRetinaUrl,
+
+  iconUrl,
+
+  shadowUrl,
+
+  iconSize: [25, 41],
+
+  iconAnchor: [12, 41],
+
+  popupAnchor: [1, -34],
+
+  tooltipAnchor: [16, -28],
+
+  shadowSize: [41, 41]
+
+});
+
+L.Marker.prototype.options.icon = iconDefault;
 
 @Component({
   selector: 'app-map',
@@ -13,7 +41,7 @@ import { MarkerService } from 'src/app/services/marker.service';
 })
 export class MapComponent implements OnInit, AfterViewInit {
   
-  submissions: Submission[] = [];
+  submissions: ISubmission[] = [];
 
   page: string | number = 1;
   count: number = 4;
@@ -35,7 +63,8 @@ export class MapComponent implements OnInit, AfterViewInit {
   private initMap(): void {
     this.map = L.map('map', {
       center: [47.2362, 38.8969],
-      zoom: 6
+      zoom: 11,
+      zoomControl: false
     });
 
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -48,7 +77,14 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     });
 
+    const baseLayers = {
+      "OpenStreetMap": tiles
+    };
+
     tiles.addTo(this.map);
+    L.control.layers(baseLayers).addTo(this.map);
+    
+    L.control.zoom({position: 'bottomright'}).addTo(this.map);
   }
   
 

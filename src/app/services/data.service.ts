@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Submission } from '../models/submission';
+import { ISubmission } from '../models/submission';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  fetchSubmissions(): Observable<Submission[]>{
-    return this.httpClient.get<Submission[]>('http://localhost:3000/submissions');
+  fetchSubmissions(): Observable<ISubmission[]>{
+    return this.httpClient.get<ISubmission[]>('http://localhost:3000/submissions');
   }
 }
