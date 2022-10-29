@@ -1,0 +1,541 @@
+.main-container {
+    max-height: 792px;
+    height: 100%;
+    max-width: 1536px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin-top: 36px;
+
+    .main-title {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 140%;
+      color: #060C1B;
+      margin-left: 2.4rem;
+    }
+}
+
+input[type=date] {
+    font-size: 12px;
+    appearance: none;
+    &:active, &:focus {
+      outline: none !important;
+    }
+  }
+
+input[type=search]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type=date]{
+  .ng-invalid.ng-touched{ 
+    border-color: red; 
+ }
+
+ &:focus {
+    box-shadow: 0 0 6px 0 rgba(24, 138, 254, 0.2);
+    border: solid 1.3px #6fb6ff;
+  }
+
+}
+
+input[type=search]::-ms-clear { 
+  display: none;
+}
+
+input[type=checkbox] {
+  width: 24px;
+  height: 24px;
+  margin-left: 1rem;
+}
+
+input[type=date]::-webkit-datetime-edit-fields-wrapper {
+  padding-left: 3rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #060C1B;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator{
+  opacity: 0;
+  position: absolute;
+  top: 13px;
+  left: 21px;
+}
+
+input[type=date] {
+  width: 209px;
+  position: relative;
+}
+
+input[type=date]::before {
+  position: absolute;
+  top: 13px; left: 21px;
+  content: url(../../../assets/Calendar.svg);
+}
+
+.input-wrapper {
+    max-width: 1081px;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+}
+
+.btn-wrapper {
+    max-width: 260px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #B8B9BC;
+    border-radius: 4px;
+
+    &.ng-invalid.ng-touched{ 
+      border-color: red; 
+    }
+
+    &:focus {
+      box-shadow: 0 0 6px 0 rgba(24, 138, 254, 0.2);
+      border: solid 1.3px #6fb6ff;
+    }
+
+    &:focus+.form-label {
+      top: 0;
+      left: 1px;
+      padding: 0;
+      opacity: 1;
+    }
+
+    &::placeholder {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: #B8B9BC;
+        padding-left: 3rem;
+    }
+
+    &-error {
+      border: solid 1.3px #ff677e;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+} 
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 334px;
+  border: 1px solid #B8B9BC;
+  border-radius: 4px;
+
+  img {
+    margin-left: 18px;
+  }
+
+  input[type=search]::placeholder {
+    padding-left: 0.1rem;
+  }
+
+  input[type=search].search {
+    width: 286px;
+    border: none;
+    appearance: none;
+
+    &:active, &:focus {
+      outline: none !important;
+    }
+
+    &:focus {
+      border: none !important;
+      box-shadow: none;
+    }
+  }
+}
+
+select {
+    max-width: 209px;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #B8B9BC;
+    border-radius: 4px;
+    appearance: none;
+    background: url(../../../assets/arrowdown.svg);
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    background-color: white;
+    padding-left: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+     user-select: none;
+  
+    &:active, &:focus {
+      outline: none !important;
+    }
+  
+    &:focus {
+      box-shadow: 0 0 6px 0 rgba(24, 138, 254, 0.2);
+      border: solid 1.3px #6fb6ff;
+    }
+
+    option {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+    }
+  
+  }
+
+.input-group {
+    max-width: 1456px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    margin: 0 40px;
+
+    .btn-group {
+       max-width: 158px;
+       width: 100%;
+
+        label.btn {
+            border: 2px solid #B8B9BC; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+          &:hover{
+            background: #2188D9;
+            border: none;
+            color: #FFFFFF;
+          }
+        }
+    }
+}
+
+.export-container {
+    display: flex;
+    align-items: center;
+    width: 73px;
+    height: 21px;
+    margin-top: 0.75rem;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    .export-title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: #2188D9;
+      cursor: pointer;
+    }
+}
+
+.submissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.task-list {
+    height: 480px;
+    max-width: 1456px;
+    width: 100%;
+    border: 1px solid #ECECED;
+    box-shadow: 0px 2px 10px rgba(6, 12, 27, 0.1);
+    border-radius: 8px;
+    margin: 0 40px;
+
+    .task-list-header {
+        max-width: 1456px;
+        width: 100%;
+        height: 3rem;
+        border-bottom: 1px solid #ECECED;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        .title-group {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1392px;
+            width: 100%;
+
+            .title {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 140%;
+                color: #060C1B;
+            }
+          
+          .date {
+            margin-right: 6rem;
+          }
+          
+          .address {
+            margin-right: 6.8rem;
+          }
+
+          .status {
+            margin-left: 4.4rem;
+          }
+
+          .from {
+            margin-left: -0.9rem;
+          }
+
+          .to {
+            margin-right: 2rem;
+          }
+        }
+    }
+}
+
+.list-item {
+  max-width: 1456px;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ECECED;
+  gap: 24px;
+  cursor: pointer;
+
+  input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    background: #F1F5F8;
+  }
+
+   .inform-group {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     max-width: 1343px;
+     width: 100%;
+
+    .middle,.end,.start {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 26px;
+      max-width: 334px;
+      width: 100%;
+    }
+
+    .end {
+      max-width: 513px;
+    }
+
+    .start {
+      max-width: 400px;
+      gap: 45px;
+    }
+
+    .from,
+    .to,
+    .address,
+    .date{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      .item-text {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: #060C1B;
+      }
+    } 
+
+    .from,.to {
+      max-width: 154px;
+    }
+
+    .address {
+      max-width: 380px;
+    }
+
+    .date {
+      max-width: 115px;
+    }
+  
+    .item-status,
+    .low-risk,
+    .uncompleted,
+    .unassigned {
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 16px;
+      gap: 8px;
+      border-radius: 4px;
+  
+      .circle,
+      .green,
+      .red,
+      .grey {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+  
+      .status-title,
+      .title-green,
+      .title-red,
+      .title-grey {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+      }
+   }
+
+   .low-risk {
+      border: 1px solid #53D86A;
+      background:  #D7E5DA;
+   }
+
+   .uncompleted {
+      border: 1px solid #FF3D00;
+      background: rgba(255, 61, 0, 0.1);
+   }
+
+   .unassigned {
+    background: #ECECED;
+    border: 1px solid #B8B9BC;
+   }
+
+   .green {
+    background: var(--dark-green);
+   }
+
+   .red {
+    background: var(--dark-red);
+   }
+
+   .grey {
+    background: var(--dark-grey);
+   }
+
+   .title-green {
+    color: var(--dark-green);
+   }
+
+   .title-red {
+    color: var(--dark-red);
+   }
+
+   .title-grey {
+    color: var(--dark-grey);
+   }
+
+  }
+}
+
+.pagination {
+  max-width: 1456px;
+  width: 100%;
+  height: 2rem;
+  margin-top: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 40px;
+
+  .pagination-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #060C1B;
+  }
+}
+
+.my-pagination::ng-deep .ngx-pagination li{
+  font-family: 'Roboto', sans-serif;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #B8B9BC;
+  border-radius: 4px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #060C1B
+}
+
+.my-pagination::ng-deep .ngx-pagination .current{
+  font-family: 'Roboto', sans-serif;
+  width: 2rem;
+  height: 2rem;
+  border: solid 1.3px #6fb6ff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2188D9;
+  cursor: pointer;
+}
+
+.my-pagination::ng-deep .ngx-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+}
+
+.my-pagination::ng-deep .ngx-pagination .pagination-previous a::before,
+.my-pagination::ng-deep .ngx-pagination .pagination-previous.disabled::before {
+  content: url(../../../assets/ArrowLeft.svg) !important;
+  display: inline-block;
+  margin-right: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.my-pagination::ng-deep .ngx-pagination .pagination-previous:hover,
+.my-pagination::ng-deep .ngx-pagination .pagination-next:hover {
+  background: #ECECED;
+}
+
+.my-pagination::ng-deep .ngx-pagination .pagination-next a::after,
+.my-pagination::ng-deep .ngx-pagination .pagination-next.disabled::after{
+  content: url(../../../assets/ArrowRight.svg) !important;
+  display: inline-block;
+  margin-right: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.my-pagination::ng-deep .ngx-pagination .small-screen {
+  display: none;
+}

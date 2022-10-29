@@ -1,0 +1,132 @@
+<div class="main-container">
+    <span class="main-title">Submissions</span>
+    <div class="input-group">
+        <div class="input-wrapper">
+          <div class="search-container">
+            <img src="../../../assets/search.svg" alt="">
+            <input type="search" class="search" placeholder="Search...">
+          </div>
+          <select name="" id="">
+            <option value="">Select Form</option>
+          </select>
+          <select 
+          #status
+          name="status" 
+          id="status"
+          (change)="getSelectedList(status.value)"
+          >
+            <option value="">Select Status</option>
+            <option value="Low Risk">Low Risk</option>
+            <option value="Uncomplete">Uncomplete</option>
+            <option value="Unassigned">Unassigned</option>
+          </select>
+           <div class="input-container">
+            <input type="date" id="date">
+           </div>
+        </div>
+        <div class="btn-wrapper">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input 
+                type="radio" 
+                class="btn-check" 
+                name="btnradio" 
+                id="btnradio1" 
+                autocomplete="off" 
+                (click)="selectComponent(true)"
+                >
+                <label class="btn" for="btnradio1">Map</label>
+              
+                <input 
+                type="radio" 
+                class="btn-check" 
+                name="btnradio" 
+                id="btnradio2" 
+                autocomplete="off"
+                (click)="selectComponent(false)"
+                >
+                <label class="btn" for="btnradio2">List</label>
+            </div>
+            <div class="export-container">
+                <a href="/src/assets/mock-data/data.json" class="export-icon-wrapper" download>
+                    <img src="../../../assets/Paper Download.svg" alt="">
+                </a>
+                <span class="export-title">Export</span>
+            </div>
+        </div>
+    </div>
+    <div class="submissions-list" *ngIf="!isSelectedComponent">
+      <div class="task-list">
+        <div class="task-list-header">
+           <input type="checkbox" name="check" id="check" (change)="changeChecked()">
+           <div class="title-group">
+            <span class="title task">Task</span>
+            <span class="title status">Status</span>
+            <span class="title from">From</span>
+            <span class="title to">To</span>
+            <span class="title address">Customer Address</span>
+            <span class="title date">Due Date</span>
+           </div>
+        </div>
+        <ul class="list-group">
+            <li 
+            id={{i}}
+            class="list-item" 
+            *ngFor="let submission of submissions | paginate: { itemsPerPage: count, currentPage: page }; let i = index"
+            (click)="setItemSelected(i)"
+            > 
+                <input 
+                #checkbox
+                type="checkbox" 
+                name="" 
+                id={{i}} 
+                [checked]="isAllChecked" 
+                [hidden]="itemSelectedIndex[i] !== i"
+                >
+                <div class="inform-group" id={{i}} [style.margin-left]="itemSelectedIndex[i] === i ? 0: '4rem'">
+                   <div class="start">
+                    <span class="item-text">{{submission.task}}</span>
+                    <div class="low-risk" *ngIf="submission.status === 'Low Risk'">
+                      <div class="green"></div>
+                      <span class="title-green">{{submission.status}}</span>
+                    </div>
+                    <div class="uncompleted" *ngIf="submission.status === 'Uncomplete'">
+                        <div class="red"></div>
+                        <span class="title-red">{{submission.status}}</span>
+                    </div>
+                    <div class="unassigned" *ngIf="submission.status === 'Unassigned'">
+                        <div class="grey"></div>
+                        <span class="title-grey">{{submission.status}}</span>
+                    </div>
+                   </div>
+                  <div class="middle">
+                    <div class="from">
+                        <span class="item-text">{{submission.from}}</span>
+                      </div>
+                      <div class="to">
+                        <span class="item-text">{{submission.to}}</span>
+                      </div>
+                  </div>
+                  <div class="end">
+                    <div class="address">
+                        <span class="item-text">{{submission.address}}</span>
+                      </div>
+                      <div class="date">
+                        <span class="item-text">{{submission.due_date}}</span>
+                      </div>
+                  </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="pagination">
+         <span class="pagination-title">{{page}}-{{pages}} of {{submissions.length}} submissions</span>
+        <pagination-controls 
+        class="my-pagination"
+        previousLabel="" 
+        nextLabel=""
+        (pageChange)="page = $event"
+        ></pagination-controls>
+    </div>
+   </div>
+   <app-map *ngIf="isSelectedComponent"></app-map>
+</div>
