@@ -1,0 +1,38 @@
+select {
+    width: 209px;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #B8B9BC;
+    border-radius: 4px;
+    appearance: none;
+    background: url(../../../../assets/arrowdown.svg);
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    background-color: white;
+    padding-left: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+     user-select: none;
+  
+    &:active, &:focus {
+      outline: none !important;
+    }
+  
+    &:focus {
+      box-shadow: 0 0 6px 0 rgba(24, 138, 254, 0.2);
+      border: solid 1.3px #6fb6ff;
+    }
+
+    option {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+    }
+  
+}
