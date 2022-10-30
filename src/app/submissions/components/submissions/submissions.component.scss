@@ -86,33 +86,6 @@ input {
     justify-content: space-between;
     height: 48px;
     margin: 0 40px;
-
-    .btn-group {
-       max-width: 158px;
-       width: 100%;
-       border: 2px solid var(--dark-grey);
-
-       .btn-outline-primary {
-        --bs-btn-color: var(--dark-blue);
-        --bs-btn-active-color: var(--white);
-        --bs-btn-active-bg: var(--color-blue);
-        --bs-btn-border-radius: 0.275rem;
-      }
-
-        label.btn { 
-            border: 2px solid var(--dark-grey);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-
-          &:hover{
-            background: var(--color-blue);
-            border: none;
-            color: var(--white);
-          }
-        }
-    }
 }
 
 .export-container {

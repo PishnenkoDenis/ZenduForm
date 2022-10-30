@@ -7,6 +7,7 @@ import { SearchComponent } from '../shared/components/search/search.component';
 import { SelectStatusComponent } from '../shared/components/select-status/select-status.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MapComponent } from '../components/map/map.component';
+import { ToggleComponent } from '../shared/components/toggle/toggle.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MapComponent } from '../components/map/map.component';
     DateComponent,
     SearchComponent,
     SelectStatusComponent,
-    MapComponent
+    MapComponent,
+    ToggleComponent
   ],
   imports: [
     CommonModule,

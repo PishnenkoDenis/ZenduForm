@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SubmissionService } from 'src/app/services/submission.service';
 
 @Component({
   selector: 'app-select-status',
