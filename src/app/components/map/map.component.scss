@@ -42,7 +42,7 @@
            display: flex;
            flex-direction: column;
            gap: 0.5rem;
-           border: 1px solid #B8B9BC;
+           border: 1px solid var(--dark-grey);
            border-radius: 4px;
 
            .item-header {
@@ -58,7 +58,7 @@
               font-weight: 700;
               font-size: 18px;
               line-height: 140%;
-              color: #060C1B;
+              color: var(--dark-blue);
             }
 
             .low-risk,
@@ -93,18 +93,18 @@
            }
 
            .low-risk {
-            border: 1px solid #53D86A;
-            background:  #D7E5DA;
+            border: 1px solid var(--green);
+            background:  var(--color-green);
          }
       
          .uncompleted {
-            border: 1px solid #FF3D00;
+            border: 1px solid var(--dark-red);
             background: rgba(255, 61, 0, 0.1);
          }
       
          .unassigned {
-          background: #ECECED;
-          border: 1px solid #B8B9BC;
+          background: var(--color-grey);
+          border: 1px solid var(--dark-grey);
          }
       
          .green {
@@ -154,15 +154,15 @@
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 130%;
-                color: #B8B9BC;
+                color: var(--dark-grey);
               }
 
               .right-text {
-                color: #060C1B;
+                color: var(--dark-blue);
               }
 
               .date {
-                color: #FF3D00;
+                color: var(--dark-red);
               }
             }
           }
@@ -219,14 +219,14 @@
     font-family: 'Roboto', sans-serif;
     width: 2rem;
     height: 2rem;
-    border: 1px solid #B8B9BC;
+    border: 1px solid var(--dark-grey);
     border-radius: 4px;
-    background: #FFFFFF;
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: #060C1B
+    color: var(--dark-blue);
   }
   
   .my-pagination::ng-deep .ngx-pagination .current{
@@ -238,7 +238,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #2188D9;
+    color: var(--color-blue);
     cursor: pointer;
   }
 
@@ -259,7 +259,7 @@
   
   .my-pagination::ng-deep .ngx-pagination .pagination-previous:hover,
   .my-pagination::ng-deep .ngx-pagination .pagination-next:hover {
-    background: #ECECED;
+    background: var(color-grey);
   }
   
   .my-pagination::ng-deep .ngx-pagination .pagination-next a::after,

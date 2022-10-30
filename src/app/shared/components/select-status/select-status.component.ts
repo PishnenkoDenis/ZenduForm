@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SubmissionService } from 'src/app/services/submission.service';
 
 @Component({
@@ -8,7 +8,9 @@ import { SubmissionService } from 'src/app/services/submission.service';
 })
 export class SelectStatusComponent implements OnInit {
 
-  @Output() onChangedStatus = new EventEmitter<string>();
+  @Input() options: Array<object>;
+
+  @Output() ChangedStatus = new EventEmitter<string>();
 
   constructor() { }
 
@@ -16,7 +18,7 @@ export class SelectStatusComponent implements OnInit {
   }
 
   getStatus(value: string) {
-    this.onChangedStatus.emit(value);
+    this.ChangedStatus.emit(value);
   }
 
 }

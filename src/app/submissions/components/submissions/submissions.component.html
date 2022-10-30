@@ -3,8 +3,11 @@
     <div class="input-group">
         <div class="input-wrapper">
           <app-search></app-search>
-          <app-select-form></app-select-form>
-          <app-select-status (onChangedStatus)="getSelectedList($event)"></app-select-status>
+          <app-select-status [options]="selectItems"></app-select-status>
+          <app-select-status 
+          (ChangedStatus)="getSelectedList($event)"
+          [options]="statusItems"
+          ></app-select-status>
           <app-date></app-date>
         </div>
         <div class="btn-wrapper">

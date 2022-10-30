@@ -1,15 +1,15 @@
 select {
     width: 209px;
     height: 100%;
-    background: #FFFFFF;
-    border: 1px solid #B8B9BC;
+    background: var(--white);
+    border: 1px solid var(--dark-grey);
     border-radius: 4px;
     appearance: none;
     background: url(../../../../assets/arrowdown.svg);
     background-repeat: no-repeat;
     background-position: right 18px center;
     background-size: 16px;
-    background-color: white;
+    background-color: var(--white);
     padding-left: 1rem;
     appearance: none;
     -webkit-appearance: none;
@@ -18,7 +18,7 @@ select {
     -moz-user-select: -moz-none;
     -ms-user-select: none;
      user-select: none;
-  
+
     &:active, &:focus {
       outline: none !important;
     }
@@ -33,6 +33,12 @@ select {
       font-weight: 400;
       font-size: 16px;
       line-height: 130%;
+      appearance: none;
+
+      &:focus {
+        background: var(--color-blue);
+        color: var(--white);
+      }
     }
   
 }

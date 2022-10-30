@@ -8,14 +8,14 @@ import * as L from 'leaflet';
 })
 export class MarkerService {
 
-  places: string = '/assets/data/markers.json';
+  places = '/assets/data/markers.json';
 
   constructor(private httpClient: HttpClient) { }
 
   makeMarkers(map: L.map): void {
     this.httpClient.get(this.places).subscribe(
       (result: any) => {
-        for(const place of result.features) {
+        for (const place of result.features) {
 
           const lon = place.geometry.coordinates[0];
           const lat = place.geometry.coordinates[1];
@@ -25,6 +25,6 @@ export class MarkerService {
           marker.addTo(map);
         }
       }
-    )
+    );
   }
 }

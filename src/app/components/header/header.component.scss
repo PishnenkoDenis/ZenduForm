@@ -5,7 +5,7 @@ nav.header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #2188D9;
+    background: var(--color-blue);
 
 }
 
@@ -14,7 +14,7 @@ nav.header{
    font-weight: 700;
    font-size: 32px;
    line-height: 130%;
-   color: #FFFFFF;
+   color: var(--white);
    letter-spacing: 0.02em;
    margin-left: 2rem;
 }
@@ -28,7 +28,7 @@ nav.header{
 }
 
 a.navbar-item {
-  background: #2188D9;
+  background: var(--color-blue);
   display: flex;
   height: 72px;
   flex-direction: row;
@@ -48,7 +48,7 @@ a.navbar-item {
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: var(--white);
   }
 
 }

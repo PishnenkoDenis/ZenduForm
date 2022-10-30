@@ -28,6 +28,7 @@
     "jw-paginate": "^1.0.4",
     "leaflet": "^1.7.1",
     "ngx-pagination": "^5.1.1",
+    "optionator": "^0.9.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -40,6 +41,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "eslint": "^8.26.0",
     "jasmine-core": "~3.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~5.1.0",

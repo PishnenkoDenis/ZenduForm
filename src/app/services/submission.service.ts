@@ -41,7 +41,7 @@ export class SubmissionService {
         }
       );
     }else{
-      submissionFiltered = this.submissions
+      submissionFiltered = this.submissions;
     }
     return submissionFiltered;
   }

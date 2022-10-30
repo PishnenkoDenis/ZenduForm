@@ -11,7 +11,7 @@ input[type=date]::-webkit-datetime-edit-fields-wrapper {
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
-    color: #060C1B;
+    color: var(--dark-blue);
 }
 
 input[type=date]::-webkit-calendar-picker-indicator{
@@ -27,7 +27,7 @@ input[type=date] {
     position: relative;
     font-size: 12px;
     appearance: none;
-    border: 1px solid #B8B9BC;
+    border: 1px solid var(--dark-grey);
 
     &:active, &:focus {
       outline: none !important;

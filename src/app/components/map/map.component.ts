@@ -40,7 +40,7 @@ L.Marker.prototype.options.icon = iconDefault;
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit, AfterViewInit {
-  
+
   submissions: ISubmission[] = [];
 
   page: string | number = 1;
@@ -78,15 +78,15 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
 
     const baseLayers = {
-      "OpenStreetMap": tiles
+      OpenStreetMap: tiles
     };
 
     tiles.addTo(this.map);
     L.control.layers(baseLayers).addTo(this.map);
-    
+
     L.control.zoom({position: 'bottomright'}).addTo(this.map);
   }
-  
+
 
   getSubmissions() {
     this.dataService.fetchSubmissions().subscribe(
@@ -95,7 +95,7 @@ export class MapComponent implements OnInit, AfterViewInit {
         this.pages = Math.ceil(this.submissions.length / this.count);
       },
       (error) => console.log(error)
-    )
+    );
 
   }
 
