@@ -57,18 +57,6 @@ export class SubmissionsComponent implements OnInit, AfterViewInit {
   getSelectedList(value:string) {
     this.selectedStatus = value;
     this.submissionService.filterSubmissions(this.selectedStatus)
-    // this.dataService.fetchSubmissions().pipe(
-    //   tap(data => {
-    //     if(!value) return data;
-    //   }),
-    //   map((data) =>data.filter(element => element.status === this.selectedStatus)),
-    // ).subscribe(
-    //   (submissions) => {
-    //     this.submissions = submissions;
-    //     this.pages = Math.ceil(this.submissions.length / this.count);
-    //   },
-    //   (error) => console.log(error)
-    // )
   }
 
   setItemSelected(index: any) {

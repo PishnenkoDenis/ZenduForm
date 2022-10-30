@@ -44,8 +44,8 @@ export class MapComponent implements OnInit, AfterViewInit {
   submissions: ISubmission[] = [];
 
   page: string | number = 1;
-  count: number = 4;
-  pages: number;
+  count = 4;
+  pages;
 
   private map;
 

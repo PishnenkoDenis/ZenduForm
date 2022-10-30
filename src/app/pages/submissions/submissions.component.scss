@@ -79,78 +79,6 @@ input {
     }
 } 
 
-.search-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 334px;
-  border: 1px solid #B8B9BC;
-  border-radius: 4px;
-
-  img {
-    margin-left: 18px;
-  }
-
-  input[type=search]::placeholder {
-    padding-left: 0.1rem;
-  }
-
-  input[type=search].search {
-    width: 286px;
-    border: none;
-    appearance: none;
-
-    &:active, &:focus {
-      outline: none !important;
-    }
-
-    &:focus {
-      border: none !important;
-      box-shadow: none;
-    }
-  }
-}
-
-select {
-    max-width: 209px;
-    width: 100%;
-    height: 100%;
-    background: #FFFFFF;
-    border: 1px solid #B8B9BC;
-    border-radius: 4px;
-    appearance: none;
-    background: url(../../../assets/arrowdown.svg);
-    background-repeat: no-repeat;
-    background-position: right 18px center;
-    background-size: 16px;
-    background-color: white;
-    padding-left: 1rem;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -webkit-user-select: none;
-    -moz-user-select: -moz-none;
-    -ms-user-select: none;
-     user-select: none;
-  
-    &:active, &:focus {
-      outline: none !important;
-    }
-  
-    &:focus {
-      box-shadow: 0 0 6px 0 rgba(24, 138, 254, 0.2);
-      border: solid 1.3px #6fb6ff;
-    }
-
-    option {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 130%;
-    }
-  
-  }
-
 .input-group {
     max-width: 1456px;
     width: 100%;
@@ -162,12 +90,22 @@ select {
     .btn-group {
        max-width: 158px;
        width: 100%;
+       border: 2px solid #B8B9BC;
 
-        label.btn {
-            border: 2px solid #B8B9BC; 
+       .btn-outline-primary {
+        --bs-btn-color: black;
+        --bs-btn-active-color: white;
+        --bs-btn-active-bg: #2188D9;
+        --bs-btn-border-radius: 0.275rem;
+      }
+
+        label.btn { 
+            border: 2px solid #B8B9BC;
             display: flex;
             justify-content: center;
-            align-items: center; 
+            align-items: center;
+            border: none;
+
           &:hover{
             background: #2188D9;
             border: none;
