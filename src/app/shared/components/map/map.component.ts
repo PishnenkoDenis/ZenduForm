@@ -1,6 +1,8 @@
 import {
   AfterViewInit,
-  Component
+  Component,
+  Renderer2,
+  ViewChildren
 } from '@angular/core';
 
 import * as L from 'leaflet';
@@ -41,6 +43,7 @@ L.Marker.prototype.options.icon = iconDefault;
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements AfterViewInit {
+
   submissions: ISubmission[] = [];
 
   page: string | number = 1;
@@ -116,4 +119,8 @@ export class MapComponent implements AfterViewInit {
     );
   }
 
+toggleMarkers(){
+  this.markerService.toggleMarkers(this.map)
+}
+  
 }
