@@ -120,7 +120,7 @@ export class MapComponent implements AfterViewInit {
   }
 
 toggleMarkers(){
-  this.markerService.toggleMarkers(this.map)
+  this.markerService.toggleMarkers(this.map);
 }
-  
+
 }

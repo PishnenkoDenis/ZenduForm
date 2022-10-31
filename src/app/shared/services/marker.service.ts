@@ -8,7 +8,7 @@ import * as L from 'leaflet';
 })
 export class MarkerService {
   places = '/assets/data/markers.json';
-  markerToggle: boolean = true;
+  markerToggle = true;
 
   constructor(private httpClient: HttpClient) {}
 
