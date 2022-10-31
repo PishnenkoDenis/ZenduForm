@@ -1,98 +1,123 @@
 <div class="main-container">
-    <span class="main-title">Submissions</span>
-    <div class="input-group">
-        <div class="input-wrapper">
-          <app-search></app-search>
-          <app-select-status [options]="selectItems"></app-select-status>
-          <app-select-status 
-          (ChangedStatus)="getSelectedList($event)"
-          [options]="statusItems"
-          ></app-select-status>
-          <app-date></app-date>
-        </div>
-        <div class="btn-wrapper">
-            <app-toggle (selectedComponent)="selectComponent($event)"></app-toggle>
-            <div class="export-container">
-                <a href="/src/assets/mock-data/data.json" class="export-icon-wrapper" download>
-                    <img src="../../../assets/Paper Download.svg" alt="">
-                </a>
-                <span class="export-title">Export</span>
-            </div>
-        </div>
+  <span class="main-title">Submissions</span>
+  <div class="input-group">
+    <div class="input-wrapper">
+      <app-search></app-search>
+      <app-select-status [options]="selectItems"></app-select-status>
+      <app-select-status
+        (ChangedStatus)="getSelectedList($event)"
+        [options]="statusItems"
+      ></app-select-status>
+      <app-date></app-date>
     </div>
-    <div class="submissions-list" *ngIf="!isSelectedComponent">
-      <div class="task-list">
-        <div class="task-list-header">
-           <input type="checkbox" name="check" id="check" (change)="changeChecked()">
-           <div class="title-group">
-            <span class="title task">Task</span>
-            <span class="title status">Status</span>
-            <span class="title from">From</span>
-            <span class="title to">To</span>
-            <span class="title address">Customer Address</span>
-            <span class="title date">Due Date</span>
-           </div>
+    <div class="btn-wrapper">
+      <app-toggle (selectedComponent)="selectComponent($event)"></app-toggle>
+      <div class="export-container">
+        <a
+          href="/assets/mock-data/data.json"
+          class="export-icon-wrapper"
+          download
+        >
+          <img src="/assets/Paper Download.svg" alt="" />
+        </a>
+        <span class="export-title">Export</span>
+      </div>
+    </div>
+  </div>
+  <div class="submissions-list" *ngIf="!isSelectedComponent">
+    <div class="task-list">
+      <div class="task-list-header">
+        <input
+          type="checkbox"
+          name="check"
+          id="check"
+          (change)="changeChecked()"
+        />
+        <div class="title-group">
+          <span class="title task">Task</span>
+          <span class="title status">Status</span>
+          <span class="title from">From</span>
+          <span class="title to">To</span>
+          <span class="title address">Customer Address</span>
+          <span class="title date">Due Date</span>
         </div>
-        <ul class="list-group">
-            <li 
-            id={{i}}
-            class="list-item" 
-            *ngFor="let submission of submissions | paginate: { itemsPerPage: count, currentPage: page }; let i = index"
-            (click)="setItemSelected(i)"
-            > 
-                <input 
-                #checkbox
-                type="checkbox" 
-                name="" 
-                id={{i}} 
-                [checked]="isAllChecked" 
-                [hidden]="itemSelectedIndex[i] !== i"
-                >
-                <div class="inform-group" id={{i}} [style.margin-left]="itemSelectedIndex[i] === i ? 0: '4rem'">
-                   <div class="start">
-                    <span class="item-text">{{submission.task}}</span>
-                    <div class="low-risk" *ngIf="submission.status === 'Low Risk'">
-                      <div class="green"></div>
-                      <span class="title-green">{{submission.status}}</span>
-                    </div>
-                    <div class="uncompleted" *ngIf="submission.status === 'Uncomplete'">
-                        <div class="red"></div>
-                        <span class="title-red">{{submission.status}}</span>
-                    </div>
-                    <div class="unassigned" *ngIf="submission.status === 'Unassigned'">
-                        <div class="grey"></div>
-                        <span class="title-grey">{{submission.status}}</span>
-                    </div>
-                   </div>
-                  <div class="middle">
-                    <div class="from">
-                        <span class="item-text">{{submission.from}}</span>
-                      </div>
-                      <div class="to">
-                        <span class="item-text">{{submission.to}}</span>
-                      </div>
-                  </div>
-                  <div class="end">
-                    <div class="address">
-                        <span class="item-text">{{submission.address}}</span>
-                      </div>
-                      <div class="date">
-                        <span class="item-text">{{submission.due_date}}</span>
-                      </div>
-                  </div>
-                </div>
-            </li>
-        </ul>
+      </div>
+      <ul class="list-group">
+        <li
+          id="{{ i }}"
+          class="list-item"
+          *ngFor="
+            let submission of submissions
+              | paginate: { itemsPerPage: count, currentPage: page };
+            let i = index
+          "
+          (click)="setItemSelected(i)"
+        >
+          <input
+            #checkbox
+            type="checkbox"
+            name=""
+            id="{{ i }}"
+            [checked]="isAllChecked"
+            [hidden]="itemSelectedIndex[i] !== i"
+          />
+          <div
+            class="inform-group"
+            id="{{ i }}"
+            [style.margin-left]="itemSelectedIndex[i] === i ? 0 : '4rem'"
+          >
+            <div class="start">
+              <span class="item-text">{{ submission.task }}</span>
+              <div class="low-risk" *ngIf="submission.status === 'Low Risk'">
+                <div class="green"></div>
+                <span class="title-green">{{ submission.status }}</span>
+              </div>
+              <div
+                class="uncompleted"
+                *ngIf="submission.status === 'Uncomplete'"
+              >
+                <div class="red"></div>
+                <span class="title-red">{{ submission.status }}</span>
+              </div>
+              <div
+                class="unassigned"
+                *ngIf="submission.status === 'Unassigned'"
+              >
+                <div class="grey"></div>
+                <span class="title-grey">{{ submission.status }}</span>
+              </div>
+            </div>
+            <div class="middle">
+              <div class="from">
+                <span class="item-text">{{ submission.from }}</span>
+              </div>
+              <div class="to">
+                <span class="item-text">{{ submission.to }}</span>
+              </div>
+            </div>
+            <div class="end">
+              <div class="address">
+                <span class="item-text">{{ submission.address }}</span>
+              </div>
+              <div class="date">
+                <span class="item-text">{{ submission.due_date }}</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
     <div class="pagination">
-         <span class="pagination-title">{{page}}-{{pages}} of {{submissions.length}} submissions</span>
-        <pagination-controls 
+      <span class="pagination-title"
+        >{{ itemsAmount }} of {{ submissions.length }} submissions</span
+      >
+      <pagination-controls
         class="my-pagination"
-        previousLabel="" 
+        previousLabel=""
         nextLabel=""
         (pageChange)="page = $event"
-        ></pagination-controls>
+      ></pagination-controls>
     </div>
-   </div>
-   <app-map *ngIf="isSelectedComponent"></app-map>
+  </div>
+  <app-map *ngIf="isSelectedComponent"></app-map>
 </div>

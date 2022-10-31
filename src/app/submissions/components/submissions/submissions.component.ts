@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
-import { ISubmission} from 'src/app/models/submission';
-import { DataService } from 'src/app/services/data.service';
-import { SubmissionService } from 'src/app/services/submission.service';
+import { ISubmission} from '../../models/submission';
+import { SubmissionService } from '../../services/submission.service';
 
 
 @Component({
@@ -10,10 +9,10 @@ import { SubmissionService } from 'src/app/services/submission.service';
   templateUrl: './submissions.component.html',
   styleUrls: ['./submissions.component.scss']
 })
-export class SubmissionsComponent implements OnInit, AfterViewInit {
+export class SubmissionsComponent implements OnDestroy {
 
   submissions: ISubmission[] = [];
-  page: string | number = 1;
+  page = 1;
   count = 9;
   pages: number;
 
@@ -26,7 +25,6 @@ export class SubmissionsComponent implements OnInit, AfterViewInit {
 
   selectItems: Array<object> = [{value: '', status: 'Select Form'}];
 
-
   isAllChecked = false;
 
   itemSelectedIndex: object = {};
@@ -35,24 +33,15 @@ export class SubmissionsComponent implements OnInit, AfterViewInit {
 
   isSelectedComponent = false;
 
-  @ViewChild('status', {static: true}) private statusRef: ElementRef;
-
-  constructor(protected dataService: DataService, private submissionService: SubmissionService) {
+  constructor(private submissionService: SubmissionService) {
     this.submissionService.updateSubmissions();
     this.submissionService.$submissions.subscribe(
       (submissions: ISubmission[]) => {
         this.submissions = submissions;
+        this.pages = Math.ceil(this.submissions.length / this.count);
       }
     );
    }
-
-  ngOnInit(): void {
-    this.getSubmissinons();
-  }
-
-  ngAfterViewInit(): void {
-
-  }
 
   selectComponent(value: boolean) {
     this.isSelectedComponent = value;
@@ -72,15 +61,15 @@ export class SubmissionsComponent implements OnInit, AfterViewInit {
     ? delete this.itemSelectedIndex[index] : this.itemSelectedIndex[index] = index;
   }
 
-  getSubmissinons() {
-    this.dataService.fetchSubmissions().subscribe(
-      (submissions) => {
-        this.submissions = submissions;
-        this.pages = Math.ceil(this.submissions.length / this.count);
-      },
-      (error) => console.log(error)
-    );
+  ngOnDestroy(): void {
+    this.submissionService.clearSubmissions();
+  }
+
+
+  get itemsAmount(){
+    return `${(this.page - 1) * this.count + 1} - ${this.page * this.count}`;
 
   }
+
 
 }

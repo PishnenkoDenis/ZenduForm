@@ -369,7 +369,7 @@ input {
 
 .my-pagination::ng-deep .ngx-pagination .pagination-previous a::before,
 .my-pagination::ng-deep .ngx-pagination .pagination-previous.disabled::before {
-  content: url(../../../../assets/ArrowLeft.svg) !important;
+  content: url(/assets/ArrowLeft.svg) !important;
   display: inline-block;
   margin-right: 0.3rem;
   margin-top: 0.4rem;
@@ -382,7 +382,7 @@ input {
 
 .my-pagination::ng-deep .ngx-pagination .pagination-next a::after,
 .my-pagination::ng-deep .ngx-pagination .pagination-next.disabled::after{
-  content: url(../../../../assets/ArrowRight.svg) !important;
+  content: url(/assets/ArrowRight.svg) !important;
   display: inline-block;
   margin-right: 0.3rem;
   margin-top: 0.4rem;

@@ -42,7 +42,7 @@ input[type=date] {
   input[type=date]::before {
     position: absolute;
     top: 13px; left: 21px;
-    content: url(../../../../assets/Calendar.svg);
+    content: url(/assets/Calendar.svg);
 }
 
 .input-container {

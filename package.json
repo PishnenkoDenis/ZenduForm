@@ -24,8 +24,6 @@
     "@ng-bootstrap/ng-bootstrap": "^6.2.0",
     "bootstrap": "^5.2.2",
     "json-server": "^0.17.0",
-    "jw-angular-pagination": "^1.2.0",
-    "jw-paginate": "^1.0.4",
     "leaflet": "^1.7.1",
     "ngx-pagination": "^5.1.1",
     "optionator": "^0.9.1",

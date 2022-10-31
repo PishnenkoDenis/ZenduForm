@@ -177,29 +177,62 @@
 
 }
 
+.map::ng-deep .leaflet-marker-icon{
+  width: 40px !important;
+  height: 40px !important;
+}
+
 .map::ng-deep .leaflet-control-container {
   
   .leaflet-bottom .leaflet-control {
-    margin-bottom: 67px;
+    margin-bottom: 152px;
   }
 
   .leaflet-right .leaflet-control {
-    margin-right: 42px;
+    margin-right: 41px;
   }
 
   .leaflet-top .leaflet-control {
-    margin-top: 36px;
+    margin-top: 479px;
+  }
+
+  .leaflet-control-layers:not(.leaflet-control-layers-expanded) {
+    background: none;
+    border: none;
   }
 
   .leaflet-control-layers-toggle {
     width: 48px;
     height: 48px;
     border-radius: 72px;
+    background: var(--white);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+    background-image: url(/assets/layers.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .leaflet-control-attribution {
     display: none;
   }
+}
+
+#hide-btn {
+  position: absolute;
+  border: none;
+  outline: none;
+  bottom: 24px;
+  right: 41px;
+  padding: 10px;
+  z-index: 400;
+  width: 48px;
+  height: 48px;
+  background-image: url(/assets/close-cross.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: var(--white);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 72px;
 }
 
 .map::ng-deep .leaflet-control-container .leaflet-bar {
@@ -251,7 +284,7 @@
   
   .my-pagination::ng-deep .ngx-pagination .pagination-previous a::before,
   .my-pagination::ng-deep .ngx-pagination .pagination-previous.disabled::before {
-    content: url(../../../assets/ArrowLeft.svg) !important;
+    content: url(/assets/ArrowLeft.svg) !important;
     display: inline-block;
     margin-right: 0.3rem;
     margin-top: 0.4rem;
@@ -264,7 +297,7 @@
   
   .my-pagination::ng-deep .ngx-pagination .pagination-next a::after,
   .my-pagination::ng-deep .ngx-pagination .pagination-next.disabled::after{
-    content: url(../../../assets/ArrowRight.svg) !important;
+    content: url(/assets/ArrowRight.svg) !important;
     display: inline-block;
     margin-right: 0.3rem;
     margin-top: 0.4rem;

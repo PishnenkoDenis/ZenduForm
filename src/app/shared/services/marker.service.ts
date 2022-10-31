@@ -12,6 +12,8 @@ export class MarkerService {
 
   constructor(private httpClient: HttpClient) { }
 
+  markers = [];
+
   makeMarkers(map: L.map): void {
     this.httpClient.get(this.places).subscribe(
       (result: any) => {
@@ -22,9 +24,27 @@ export class MarkerService {
 
           const marker = L.marker([lon, lat]);
 
+          this.markers.push(marker);
+
           marker.addTo(map);
         }
       }
     );
+  }
+
+  deleteMarkers(map: L.map) {
+    for (const marker of this.markers) {
+        map.removeLayer(marker);
+      }
+  }
+
+  addMarker(e: L.LeafletMouseEvent, map: L.map) {
+    const marker = L.marker(e.latlng, {
+      draggable: true
+    }).addTo(map);
+
+    this.markers.push(marker);
+    map.addLayer(marker);
+    // marker.on("click", this.deleteMarker);
   }
 }
